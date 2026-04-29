@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% block title %}Disha Consultant - Your Gateway to Global Education{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-tag">🎓 #1 Study Abroad Consultant</span>
+            <h1>Your Dream <span>Education</span> Abroad Starts Here</h1>
+            <p>Get expert guidance for studying in top universities across the world. We help you achieve your global education dreams with personalized counseling.</p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Get Free Consultation <i class="fas fa-arrow-right"></i></a>
+                <a href="{{ url_for('services') }}" class="btn btn-outline">Our Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>10K+</h3>
+                    <p>Students Placed</p>
+                </div>
+                <div class="stat">
+                    <h3>500+</h3>
+                    <p>Universities</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Countries</p>
+                </div>
+                <div class="stat">
+                    <h3>15+</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>Expert Counselors</h3>
+                <p>Get guidance from certified counselors with years of experience.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Global Network</h3>
+                <p>Partnerships with 500+ universities across 50+ countries.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon"><i class="fas fa-passport"></i></div>
+                <h3>Visa Success</h3>
+                <p>98% visa approval rate with our expert visa assistance.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>24/7 Support</h3>
+                <p>Round the clock support for all your queries and concerns.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" alt="About Us">
+                <div class="experience-badge">
+                    <h3>15+</h3>
+                    <p>Years of Excellence</p>
+                </div>
+            </div>
+            <div class="about-content" data-aos="fade-left">
+                <span class="section-tag">About Us</span>
+                <h2>Welcome to <span>Disha Consultant</span></h2>
+                <p>We are India's leading study abroad consultancy, dedicated to helping students achieve their dreams of international education. With over 15 years of experience, we've successfully placed thousands of students in top universities worldwide.</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-check-circle"></i> Personalized career counseling</li>
+                    <li><i class="fas fa-check-circle"></i> University selection assistance</li>
+                    <li><i class="fas fa-check-circle"></i> Application & admission support</li>
+                    <li><i class="fas fa-check-circle"></i> Visa processing guidance</li>
+                    <li><i class="fas fa-check-circle"></i> Pre-departure briefing</li>
+                </ul>
+                <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Our Services</span>
+            <h2>What We <span>Offer</span></h2>
+            <p>Comprehensive services to make your study abroad journey seamless</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Study Abroad</h3>
+                <p>Get admission in top universities across USA, UK, Canada, Australia and more.</p>
+                <a href="{{ url_for('services') }}" class="service-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fas fa-passport"></i></div>
+                <h3>Visa Assistance</h3>
+                <p>Complete visa guidance and documentation support with high success rate.</p>
+                <a href="{{ url_for('visa') }}" class="service-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fas fa-book-open"></i></div>
+                <h3>IELTS Coaching</h3>
+                <p>Expert IELTS coaching with experienced trainers and proven methodology.</p>
+                <a href="{{ url_for('coaching') }}" class="service-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="fas fa-laptop"></i></div>
+                <h3>PTE Coaching</h3>
+                <p>Comprehensive PTE preparation with mock tests and personalized feedback.</p>
+                <a href="{{ url_for('coaching') }}" class="service-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <h3>Education Loan</h3>
+                <p>Get assistance for education loans with minimal documentation hassle.</p>
+                <a href="{{ url_for('services') }}" class="service-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon"><i class="fas fa-plane"></i></div>
+                <h3>Pre-Departure</h3>
+                <p>Complete pre-departure briefing and orientation before you fly.</p>
+                <a href="{{ url_for('services') }}" class="service-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Countries -->
+<section class="countries-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Top Destinations</span>
+            <h2>Study <span>Destinations</span></h2>
+            <p>Choose from world's top study destinations</p>
+        </div>
+        <div class="countries-grid">
+            <div class="country-card" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=400" alt="USA">
+                <div class="country-overlay">
+                    <h3>USA</h3>
+                    <p>Top universities & research opportunities</p>
+                </div>
+            </div>
+            <div class="country-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400" alt="UK">
+                <div class="country-overlay">
+                    <h3>UK</h3>
+                    <p>World-class education heritage</p>
+                </div>
+            </div>
+            <div class="country-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=400" alt="Canada">
+                <div class="country-overlay">
+                    <h3>Canada</h3>
+                    <p>Quality education & PR options</p>
+                </div>
+            </div>
+            <div class="country-card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=400" alt="Australia">
+                <div class="country-overlay">
+                    <h3>Australia</h3>
+                    <p>Excellent lifestyle & education</p>
+                </div>
+            </div>
+            <div class="country-card" data-aos="zoom-in" data-aos-delay="500">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400" alt="New Zealand">
+                <div class="country-overlay">
+                    <h3>New Zealand</h3>
+                    <p>Beautiful country & top quality</p>
+                </div>
+            </div>
+            <div class="country-card" data-aos="zoom-in" data-aos-delay="600">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&hue=200" alt="Germany">
+                <div class="country-overlay">
+                    <h3>Germany</h3>
+                    <p>Affordable education excellence</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="{{ url_for('countries') }}" class="btn btn-primary">View All Countries <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Testimonials</span>
+            <h2>What Our <span>Students Say</span></h2>
+            <p>Real stories from our successful students</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>Disha Consultant made my dream of studying in Canada a reality. Their guidance throughout the application and visa process was exceptional!</p>
+                <div class="testimonial-author">
+                    <img src="https://i.pravatar.cc/100?img=1" alt="Student">
+                    <div>
+                        <h4>Priya Sharma</h4>
+                        <span>University of Toronto</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>The IELTS coaching was outstanding. I scored 8.5 bands thanks to the expert trainers and excellent study material provided.</p>
+                <div class="testimonial-author">
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Student">
+                    <div>
+                        <h4>Rahul Verma</h4>
+                        <span>IELTS Score: 8.5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>Highly professional team! They helped me secure admission in my dream university in Australia with a scholarship.</p>
+                <div class="testimonial-author">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="Student">
+                    <div>
+                        <h4>Anjali Patel</h4>
+                        <span>University of Melbourne</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Ready to Start Your International Education Journey?</h2>
+            <p>Get a free consultation with our expert counselors today!</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-white">Book Free Consultation <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

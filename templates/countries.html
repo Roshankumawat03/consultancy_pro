@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block title %}Countries - Disha Consultant{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 data-aos="fade-up">Study Destinations</h1>
+        <p data-aos="fade-up" data-aos-delay="100"><a href="{{ url_for('index') }}">Home</a> / Countries</p>
+    </div>
+</section>
+
+<section class="countries-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Top Destinations</span>
+            <h2>Choose Your <span>Destination</span></h2>
+            <p>Explore the best study abroad destinations</p>
+        </div>
+        <div class="countries-detail-grid">
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=400" alt="USA">
+                <div class="country-info">
+                    <h3>United States</h3>
+                    <p>Home to top-ranked universities like MIT, Harvard, and Stanford. Best for research and innovation.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 4000+ Universities</li>
+                        <li><i class="fas fa-check"></i> Diverse Programs</li>
+                        <li><i class="fas fa-check"></i> OPT Work Authorization</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400" alt="UK">
+                <div class="country-info">
+                    <h3>United Kingdom</h3>
+                    <p>Heritage of world-class education with universities like Oxford, Cambridge, and Imperial College.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 1-Year Master's</li>
+                        <li><i class="fas fa-check"></i> 2-Year PSW Visa</li>
+                        <li><i class="fas fa-check"></i> Scholarships Available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=400" alt="Canada">
+                <div class="country-info">
+                    <h3>Canada</h3>
+                    <p>Quality education with great PR opportunities. Universities like Toronto, McGill, and UBC.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> PR Opportunities</li>
+                        <li><i class="fas fa-check"></i> Affordable Tuition</li>
+                        <li><i class="fas fa-check"></i> Post-Study Work Visa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=400" alt="Australia">
+                <div class="country-info">
+                    <h3>Australia</h3>
+                    <p>Excellent lifestyle and quality education. Group of Eight universities are world-renowned.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Top-Ranked Universities</li>
+                        <li><i class="fas fa-check"></i> Work Rights for Students</li>
+                        <li><i class="fas fa-check"></i> Skilled Migration</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="500">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400" alt="New Zealand">
+                <div class="country-info">
+                    <h3>New Zealand</h3>
+                    <p>Beautiful country with quality education and welcoming environment for international students.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 8 Public Universities</li>
+                        <li><i class="fas fa-check"></i> Post-Study Work Rights</li>
+                        <li><i class="fas fa-check"></i> Safe Environment</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="600">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400" alt="Germany">
+                <div class="country-info">
+                    <h3>Germany</h3>
+                    <p>Affordable education with strong focus on engineering and technology programs.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Low/No Tuition Fees</li>
+                        <li><i class="fas fa-check"></i> Research Excellence</li>
+                        <li><i class="fas fa-check"></i> 18 Months Job Search Visa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="700">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400" alt="France">
+                <div class="country-info">
+                    <h3>France</h3>
+                    <p>European hub of art, fashion, and business education with renowned business schools.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Top Business Schools</li>
+                        <li><i class="fas fa-check"></i> Affordable Living</li>
+                        <li><i class="fas fa-check"></i> Schengen Travel</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="country-detail-card" data-aos="fade-up" data-aos-delay="800">
+                <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400" alt="Ireland">
+                <div class="country-info">
+                    <h3>Ireland</h3>
+                    <p>English-speaking European country with friendly people and quality education.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 2-Year Stay Back</li>
+                        <li><i class="fas fa-check"></i> Tech Hub of Europe</li>
+                        <li><i class="fas fa-check"></i> Friendly Locals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

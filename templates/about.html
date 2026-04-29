@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}About Us - Disha Consultant{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 data-aos="fade-up">About Us</h1>
+        <p data-aos="fade-up" data-aos-delay="100"><a href="{{ url_for('index') }}">Home</a> / About Us</p>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" alt="About Us">
+            </div>
+            <div class="about-content" data-aos="fade-left">
+                <span class="section-tag">Who We Are</span>
+                <h2>Leading <span>Study Abroad</span> Consultants</h2>
+                <p>Disha Consultant is a premier overseas education consultancy with 15+ years of experience helping students achieve their dreams of studying abroad. We have successfully guided over 10,000 students to top universities worldwide.</p>
+                <p>Our team of certified counselors provides personalized guidance, ensuring each student gets the right university and course matching their profile and aspirations.</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-check-circle"></i> ISO Certified Consultancy</li>
+                    <li><i class="fas fa-check-circle"></i> Authorized representatives of 500+ universities</li>
+                    <li><i class="fas fa-check-circle"></i> 98% visa success rate</li>
+                    <li><i class="fas fa-check-circle"></i> Free counseling for all students</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="vision-mission">
+    <div class="container">
+        <div class="vm-grid">
+            <div class="vm-card" data-aos="fade-up">
+                <div class="vm-icon"><i class="fas fa-eye"></i></div>
+                <h3>Our Vision</h3>
+                <p>To be the most trusted and preferred overseas education consultancy, empowering students globally to achieve their academic and career aspirations.</p>
+            </div>
+            <div class="vm-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Our Mission</h3>
+                <p>To provide world-class counseling, personalized guidance, and seamless support for international education aspirants.</p>
+            </div>
+            <div class="vm-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="vm-icon"><i class="fas fa-heart"></i></div>
+                <h3>Our Values</h3>
+                <p>Integrity, transparency, excellence, and commitment to student success drive everything we do.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why-choose">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Why Choose Us</span>
+            <h2>Why Students <span>Choose Us</span></h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-number">01</div>
+                <h3>Expert Counselors</h3>
+                <p>Our team of experienced counselors provides personalized guidance to help you make informed decisions.</p>
+            </div>
+            <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="why-number">02</div>
+                <h3>Wide University Network</h3>
+                <p>We have partnerships with 500+ universities across 50+ countries worldwide.</p>
+            </div>
+            <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="why-number">03</div>
+                <h3>End-to-End Service</h3>
+                <p>From counseling to pre-departure, we handle every step of your study abroad journey.</p>
+            </div>
+            <div class="why-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="why-number">04</div>
+                <h3>Visa Success Rate</h3>
+                <p>Industry-leading 98% visa success rate with our expert documentation support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

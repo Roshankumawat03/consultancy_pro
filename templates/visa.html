@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}Visa Assistance - Disha Consultant{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 data-aos="fade-up">Visa Assistance</h1>
+        <p data-aos="fade-up" data-aos-delay="100"><a href="{{ url_for('index') }}">Home</a> / Visa</p>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=600" alt="Visa">
+            </div>
+            <div class="about-content" data-aos="fade-left">
+                <span class="section-tag">Visa Services</span>
+                <h2>Expert <span>Visa Assistance</span></h2>
+                <p>Our experienced visa counselors guide you through the entire visa application process with a 98% success rate. We provide complete documentation support, mock interviews, and personalized guidance.</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-check-circle"></i> Document Preparation</li>
+                    <li><i class="fas fa-check-circle"></i> Application Filing</li>
+                    <li><i class="fas fa-check-circle"></i> Mock Visa Interview</li>
+                    <li><i class="fas fa-check-circle"></i> Financial Documentation</li>
+                    <li><i class="fas fa-check-circle"></i> SOP Writing</li>
+                </ul>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Get Visa Help <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Visa Types</span>
+            <h2>Visa Services for <span>All Countries</span></h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fas fa-flag-usa"></i></div>
+                <h3>USA Visa</h3>
+                <p>F1 Student Visa assistance for studying in the United States.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fas fa-passport"></i></div>
+                <h3>UK Visa</h3>
+                <p>Tier 4 Student Visa support for UK education aspirants.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Canada Visa</h3>
+                <p>Study Permit assistance with SDS and Non-SDS categories.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="fas fa-globe-asia"></i></div>
+                <h3>Australia Visa</h3>
+                <p>Subclass 500 Student Visa for Australian universities.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon"><i class="fas fa-mountain"></i></div>
+                <h3>NZ Visa</h3>
+                <p>New Zealand Student Visa with complete documentation.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon"><i class="fas fa-globe-europe"></i></div>
+                <h3>Schengen Visa</h3>
+                <p>Visa assistance for European countries.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

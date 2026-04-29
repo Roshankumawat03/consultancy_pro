@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}Coaching Classes - Disha Consultant{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 data-aos="fade-up">Coaching Classes</h1>
+        <p data-aos="fade-up" data-aos-delay="100"><a href="{{ url_for('index') }}">Home</a> / Coaching</p>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Test Preparation</span>
+            <h2>Expert <span>Coaching Classes</span></h2>
+            <p>Achieve your dream score with our expert trainers</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fas fa-language"></i></div>
+                <h3>IELTS Coaching</h3>
+                <p>Comprehensive IELTS preparation for both Academic and General Training modules with mock tests.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Expert Trainers</li>
+                    <li><i class="fas fa-check"></i> Mock Tests</li>
+                    <li><i class="fas fa-check"></i> Personalized Feedback</li>
+                </ul>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fas fa-laptop"></i></div>
+                <h3>PTE Coaching</h3>
+                <p>Computer-based PTE Academic preparation with detailed strategies and practice tests.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Software Training</li>
+                    <li><i class="fas fa-check"></i> Speaking Practice</li>
+                    <li><i class="fas fa-check"></i> Score Analysis</li>
+                </ul>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fas fa-headphones"></i></div>
+                <h3>TOEFL Coaching</h3>
+                <p>Master the TOEFL iBT with our specialized coaching for all four sections.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> All Section Coverage</li>
+                    <li><i class="fas fa-check"></i> Time Management</li>
+                    <li><i class="fas fa-check"></i> Exam Strategies</li>
+                </ul>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="fas fa-pencil-alt"></i></div>
+                <h3>GRE Coaching</h3>
+                <p>Prepare for GRE with our experienced trainers and crack the exam with high scores.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Quant & Verbal</li>
+                    <li><i class="fas fa-check"></i> AWA Practice</li>
+                    <li><i class="fas fa-check"></i> Adaptive Tests</li>
+                </ul>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>GMAT Coaching</h3>
+                <p>Comprehensive GMAT preparation for MBA aspirants with proven strategies.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> All Sections</li>
+                    <li><i class="fas fa-check"></i> Strategy Sessions</li>
+                    <li><i class="fas fa-check"></i> Mock Tests</li>
+                </ul>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon"><i class="fas fa-school"></i></div>
+                <h3>SAT Coaching</h3>
+                <p>SAT preparation for undergraduate aspirants targeting top US universities.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Math & Verbal</li>
+                    <li><i class="fas fa-check"></i> Practice Tests</li>
+                    <li><i class="fas fa-check"></i> Score Improvement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

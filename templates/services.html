@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Services - Disha Consultant{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 data-aos="fade-up">Our Services</h1>
+        <p data-aos="fade-up" data-aos-delay="100"><a href="{{ url_for('index') }}">Home</a> / Services</p>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">What We Offer</span>
+            <h2>Our <span>Premium Services</span></h2>
+            <p>Comprehensive services for your study abroad journey</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Career Counseling</h3>
+                <p>Personalized career counseling to identify the best course and country based on your interests and goals.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fas fa-university"></i></div>
+                <h3>University Selection</h3>
+                <p>Help you choose the right university based on your academic profile, budget, and preferences.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Application Assistance</h3>
+                <p>Complete application support including SOP, LOR, essays, and document preparation.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="fas fa-passport"></i></div>
+                <h3>Visa Assistance</h3>
+                <p>Expert visa guidance with mock interviews and complete documentation support.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon"><i class="fas fa-book"></i></div>
+                <h3>Test Preparation</h3>
+                <p>IELTS, PTE, TOEFL, GRE, GMAT, SAT coaching by experienced trainers.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <h3>Education Loan</h3>
+                <p>Assistance with education loans from leading banks with best interest rates.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+                <div class="service-icon"><i class="fas fa-plane"></i></div>
+                <h3>Pre-Departure</h3>
+                <p>Complete pre-departure briefing including travel, accommodation, and orientation.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>Accommodation</h3>
+                <p>Help in finding suitable accommodation near your university campus.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="900">
+                <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Post Arrival Support</h3>
+                <p>Continued support after you reach your destination country.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
