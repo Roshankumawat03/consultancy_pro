@@ -1,0 +1,96 @@
+{% extends 'admin/base.html' %}
+{% block title %}Contact Messages{% endblock %}
+{% block heading %}Contact Messages{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2><i class="fas fa-envelope"></i> All Messages</h2>
+        <form method="GET" class="filter-form">
+            <input type="text" name="search" placeholder="Search..." value="{{ search }}">
+            <select name="status" onchange="this.form.submit()">
+                <option value="all" {% if status_filter == 'all' %}selected{% endif %}>All Status</option>
+                <option value="new" {% if status_filter == 'new' %}selected{% endif %}>New</option>
+                <option value="read" {% if status_filter == 'read' %}selected{% endif %}>Read</option>
+                <option value="replied" {% if status_filter == 'replied' %}selected{% endif %}>Replied</option>
+            </select>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <div class="card-body">
+        {% if contacts.items %}
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for contact in contacts.items %}
+                        <tr>
+                            <td>{{ contact.id }}</td>
+                            <td><strong>{{ contact.name }}</strong></td>
+                            <td><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></td>
+                            <td><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></td>
+                            <td>{{ contact.subject }}</td>
+                            <td>{{ contact.created_at.strftime('%d %b %Y') }}</td>
+                            <td><span class="badge badge-{{ contact.status }}">{{ contact.status|upper }}</span></td>
+                            <td class="actions">
+                                <a href="{{ url_for('admin_contact_detail', id=contact.id) }}" class="btn-icon btn-view" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <form method="POST" action="{{ url_for('admin_contact_delete', id=contact.id) }}" 
+                                      onsubmit="return confirm('Are you sure?')" style="display:inline;">
+                                    <button type="submit" class="btn-icon btn-delete" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Pagination -->
+            {% if contacts.pages > 1 %}
+            <div class="pagination">
+                {% if contacts.has_prev %}
+                    <a href="{{ url_for('admin_contacts', page=contacts.prev_num, status=status_filter, search=search) }}">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </a>
+                {% endif %}
+                
+                {% for page_num in contacts.iter_pages() %}
+                    {% if page_num %}
+                        <a href="{{ url_for('admin_contacts', page=page_num, status=status_filter, search=search) }}" 
+                           class="{% if page_num == contacts.page %}active{% endif %}">{{ page_num }}</a>
+                    {% else %}
+                        <span>...</span>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if contacts.has_next %}
+                    <a href="{{ url_for('admin_contacts', page=contacts.next_num, status=status_filter, search=search) }}">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </a>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% else %}
+            <div class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <p>No contacts found</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

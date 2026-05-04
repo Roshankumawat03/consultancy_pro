@@ -1,0 +1,88 @@
+{% extends 'admin/base.html' %}
+{% block title %}Message Details{% endblock %}
+{% block heading %}Message Details{% endblock %}
+
+{% block content %}
+<div class="back-btn-wrap">
+    <a href="{{ url_for('admin_contacts') }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to Messages
+    </a>
+</div>
+
+<div class="detail-grid">
+    <!-- Message Card -->
+    <div class="card">
+        <div class="card-header">
+            <h2><i class="fas fa-envelope-open"></i> Message #{{ contact.id }}</h2>
+            <span class="badge badge-{{ contact.status }}">{{ contact.status|upper }}</span>
+        </div>
+        <div class="card-body">
+            <div class="detail-row">
+                <strong><i class="fas fa-user"></i> Name:</strong>
+                <span>{{ contact.name }}</span>
+            </div>
+            <div class="detail-row">
+                <strong><i class="fas fa-envelope"></i> Email:</strong>
+                <span><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></span>
+            </div>
+            <div class="detail-row">
+                <strong><i class="fas fa-phone"></i> Phone:</strong>
+                <span><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></span>
+            </div>
+            <div class="detail-row">
+                <strong><i class="fas fa-tag"></i> Subject:</strong>
+                <span>{{ contact.subject }}</span>
+            </div>
+            <div class="detail-row">
+                <strong><i class="fas fa-calendar"></i> Received:</strong>
+                <span>{{ contact.created_at.strftime('%d %B %Y, %I:%M %p') }}</span>
+            </div>
+            <div class="detail-row message-block">
+                <strong><i class="fas fa-comment"></i> Message:</strong>
+                <p>{{ contact.message }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Actions Card -->
+    <div class="card">
+        <div class="card-header">
+            <h2><i class="fas fa-cog"></i> Actions</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('admin_contact_status', id=contact.id) }}">
+                <label>Update Status</label>
+                <select name="status" onchange="this.form.submit()" class="form-select">
+                    <option value="new" {% if contact.status == 'new' %}selected{% endif %}>New</option>
+                    <option value="read" {% if contact.status == 'read' %}selected{% endif %}>Read</option>
+                    <option value="replied" {% if contact.status == 'replied' %}selected{% endif %}>Replied</option>
+                </select>
+            </form>
+            
+            <hr>
+            
+            <a href="mailto:{{ contact.email }}?subject=Re: {{ contact.subject }}" class="btn btn-primary btn-block">
+                <i class="fas fa-reply"></i> Reply via Email
+            </a>
+            
+            <a href="tel:{{ contact.phone }}" class="btn btn-success btn-block">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            
+            <a href="https://wa.me/{{ contact.phone|replace('+','')|replace(' ','')|replace('-','') }}" 
+               target="_blank" class="btn btn-whatsapp btn-block">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            
+            <hr>
+            
+            <form method="POST" action="{{ url_for('admin_contact_delete', id=contact.id) }}" 
+                  onsubmit="return confirm('Delete this message permanently?')">
+                <button type="submit" class="btn btn-danger btn-block">
+                    <i class="fas fa-trash"></i> Delete Message
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

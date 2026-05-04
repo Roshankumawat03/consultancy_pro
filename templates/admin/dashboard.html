@@ -1,0 +1,93 @@
+{% extends 'admin/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block heading %}Dashboard{% endblock %}
+
+{% block content %}
+<!-- Stats Cards -->
+<div class="stats-grid">
+    <div class="stat-card stat-primary">
+        <div class="stat-icon"><i class="fas fa-envelope"></i></div>
+        <div class="stat-info">
+            <h3>{{ stats.total_contacts }}</h3>
+            <p>Total Messages</p>
+        </div>
+    </div>
+    <div class="stat-card stat-warning">
+        <div class="stat-icon"><i class="fas fa-bell"></i></div>
+        <div class="stat-info">
+            <h3>{{ stats.new_contacts }}</h3>
+            <p>New Messages</p>
+        </div>
+    </div>
+    <div class="stat-card stat-success">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-info">
+            <h3>{{ stats.total_subscribers }}</h3>
+            <p>Newsletter Subscribers</p>
+        </div>
+    </div>
+    <div class="stat-card stat-info">
+        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="stat-info">
+            <h3>98%</h3>
+            <p>Response Rate</p>
+        </div>
+    </div>
+    <div class="stat-card stat-info">
+        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="stat-info">
+            <h3>{{ stats.total_applications }}</h3>
+            <p>Total Applications</p>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Messages -->
+<div class="card">
+    <div class="card-header">
+        <h2><i class="fas fa-clock"></i> Recent Contact Messages</h2>
+        <a href="{{ url_for('admin_contacts') }}" class="btn btn-primary">View All</a>
+    </div>
+    <div class="card-body">
+        {% if stats.recent_contacts %}
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for contact in stats.recent_contacts %}
+                        <tr>
+                            <td><strong>{{ contact.name }}</strong></td>
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.subject }}</td>
+                            <td>{{ contact.created_at.strftime('%d %b %Y') }}</td>
+                            <td>
+                                <span class="badge badge-{{ contact.status }}">{{ contact.status|upper }}</span>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('admin_contact_detail', id=contact.id) }}" class="btn-icon" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <p>No messages yet</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'admin/base.html' %}
+{% block title %}Application Details{% endblock %}
+{% block heading %}Application Details{% endblock %}
+
+{% block content %}
+<div class="back-btn-wrap">
+    <a href="{{ url_for('admin_applications') }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+</div>
+
+<div class="detail-grid">
+    <div class="card">
+        <div class="card-header">
+            <h2><i class="fas fa-user-tie"></i> Application #{{ application.id }}</h2>
+            <span class="badge badge-{{ application.status }}">{{ application.status|upper }}</span>
+        </div>
+        <div class="card-body">
+            <div class="detail-row"><strong><i class="fas fa-user"></i> Name:</strong><span>{{ application.full_name }}</span></div>
+            <div class="detail-row"><strong><i class="fas fa-envelope"></i> Email:</strong><span><a href="mailto:{{ application.email }}">{{ application.email }}</a></span></div>
+            <div class="detail-row"><strong><i class="fas fa-phone"></i> Phone:</strong><span><a href="tel:{{ application.phone }}">{{ application.phone }}</a></span></div>
+            <div class="detail-row"><strong><i class="fas fa-briefcase"></i> Position:</strong><span>{{ application.position }}</span></div>
+            <div class="detail-row"><strong><i class="fas fa-clock"></i> Experience:</strong><span>{{ application.experience }}</span></div>
+            <div class="detail-row"><strong><i class="fas fa-graduation-cap"></i> Qualification:</strong><span>{{ application.qualification }}</span></div>
+            <div class="detail-row"><strong><i class="fas fa-map-marker-alt"></i> Location:</strong><span>{{ application.current_location }}</span></div>
+            <div class="detail-row"><strong><i class="fas fa-calendar"></i> Applied:</strong><span>{{ application.created_at.strftime('%d %B %Y, %I:%M %p') }}</span></div>
+            <div class="detail-row message-block">
+                <strong><i class="fas fa-tools"></i> Skills:</strong>
+                <p>{{ application.skills }}</p>
+            </div>
+            {% if application.cover_letter %}
+            <div class="detail-row message-block">
+                <strong><i class="fas fa-file-alt"></i> Cover Letter:</strong>
+                <p>{{ application.cover_letter }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header"><h2><i class="fas fa-cog"></i> Actions</h2></div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('admin_application_status', id=application.id) }}">
+                <label>Update Status</label>
+                <select name="status" onchange="this.form.submit()" class="form-select">
+                    <option value="new" {% if application.status == 'new' %}selected{% endif %}>New</option>
+                    <option value="reviewed" {% if application.status == 'reviewed' %}selected{% endif %}>Reviewed</option>
+                    <option value="shortlisted" {% if application.status == 'shortlisted' %}selected{% endif %}>Shortlisted</option>
+                    <option value="rejected" {% if application.status == 'rejected' %}selected{% endif %}>Rejected</option>
+                </select>
+            </form>
+            <hr>
+            <a href="mailto:{{ application.email }}?subject=Re: Application for {{ application.position }}" class="btn btn-primary btn-block">
+                <i class="fas fa-reply"></i> Reply via Email
+            </a>
+            <a href="tel:{{ application.phone }}" class="btn btn-success btn-block">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="https://wa.me/{{ application.phone|replace('+','')|replace(' ','')|replace('-','') }}" 
+               target="_blank" class="btn btn-whatsapp btn-block">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

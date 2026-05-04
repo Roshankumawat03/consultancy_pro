@@ -6,19 +6,49 @@
 }
 
 :root {
-    --primary: #FF6B35;
-    --primary-dark: #E55A2B;
-    --secondary: #004E89;
-    --secondary-dark: #003A6B;
-    --accent: #FFD23F;
+    --primary: #28a745;          /* Green */
+    --primary-dark: #218838;     /* Dark Green */
+
+    --secondary: #007bff;        /* Blue */
+    --secondary-dark: #0056b3;   /* Dark Blue */
+
+    --accent: #20c997;           /* Teal (mix of blue + green) */
+
     --dark: #1A1A2E;
     --light: #F8F9FA;
     --gray: #6C757D;
     --white: #FFFFFF;
+
     --shadow: 0 10px 30px rgba(0,0,0,0.1);
-    --gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-    --gradient-blue: linear-gradient(135deg, #004E89 0%, #006BA6 100%);
+
+    /* Updated Gradients */
+     --gradient: linear-gradient(135deg, #1e3a8a, #28a745);
+    --gradient-blue: linear-gradient(135deg, #396afc, #2948ff);
+
     --transition: all 0.3s ease;
+
+        /* ===== Hiring Page Variables (Website Theme: Green + Blue) ===== */
+    --primary-color: #28a745;          /* Green - same as --primary */
+    --primary-dark: #218838;           /* Dark Green */
+    --primary-light: #4cd964;          /* Light Green */
+
+    --secondary-color: #007bff;        /* Blue - same as --secondary */
+    --secondary-dark: #0056b3;         /* Dark Blue */
+
+    --accent-color: #20c997;           /* Teal */
+
+    --text-dark: #1A1A2E;              /* Same as --dark */
+    --text-light: #6C757D;             /* Same as --gray */
+    --bg-light: #F8F9FA;               /* Same as --light */
+    --white: #FFFFFF;
+    --border-color: #e1e8ef;
+
+    --shadow-hover: 0 10px 30px rgba(40, 167, 69, 0.2);
+
+    /* Gradients - Green + Blue Theme */
+    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #28a745 100%);
+    --gradient-secondary: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+
 }
 
 html { scroll-behavior: smooth; }
@@ -44,7 +74,7 @@ ul { list-style: none; }
 
 /* ==================== TOP BAR ==================== */
 .top-bar {
-    background: var(--dark);
+    background: linear-gradient(135deg, #1e3a8a, #28a745);
     color: var(--white);
     padding: 10px 0;
     font-size: 14px;
@@ -76,13 +106,21 @@ ul { list-style: none; }
     align-items: center;
     justify-content: center;
     margin-left: 8px;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    color: #fff;
 }
 
 .top-social a:hover {
-    background: var(--primary);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
+/* Brand Colors */
+.top-social a:nth-child(1):hover { background: #1877f2; }
+.top-social a:nth-child(2):hover { background: #1da1f2; }
+.top-social a:nth-child(3):hover { background: #e4405f; }
+.top-social a:nth-child(4):hover { background: #0a66c2; }
+.top-social a:nth-child(5):hover { background: #ff0000; }
 
 /* ==================== HEADER ==================== */
 .header {
@@ -119,6 +157,16 @@ ul { list-style: none; }
     color: var(--primary);
     font-style: normal;
     font-weight: 600;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.footer-logo img {
+    height: 65px;
+    width: auto;
 }
 
 .nav-menu {
@@ -934,8 +982,8 @@ section {
 
 /* ==================== FOOTER ==================== */
 .footer {
-    background: var(--dark);
-    color: #aaa;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: #ccc;
     padding: 70px 0 0;
 }
 
@@ -983,6 +1031,13 @@ section {
     background: var(--primary);
     border-radius: 2px;
 }
+.footer-col h3 {
+    color: #fff;
+}
+
+.footer-col h3::after {
+    background: #28a745;
+}
 
 .footer-links li {
     margin-bottom: 10px;
@@ -1027,18 +1082,23 @@ section {
     width: 40px;
     height: 40px;
     background: rgba(255,255,255,0.1);
-    color: var(--white);
+    color: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .footer-social a:hover {
-    background: var(--primary);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
+
+.footer-social a:nth-child(1):hover { background: #1877f2; } /* Facebook */
+.footer-social a:nth-child(2):hover { background: #1da1f2; } /* Twitter */
+.footer-social a:nth-child(3):hover { background: #e4405f; } /* Instagram */
+.footer-social a:nth-child(4):hover { background: #0a66c2; } /* LinkedIn */
 
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -1126,7 +1186,6 @@ section {
     font-size: 24px;
     color: var(--gray);
 }
-
 
 /* ==================== CONTACT FORM ENHANCED STYLES ==================== */
 
@@ -1289,6 +1348,20 @@ section {
     border-left-color: #dc3545 !important;
     color: #dc3545 !important;
 }
+
+/* =========== Hiring ============= */
+.nav-highlight {
+    background: var(--gradient-secondary);
+    color: white !important;
+    padding: 8px 18px !important;
+    border-radius: 25px;
+    font-weight: 600;
+}
+.nav-highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4); /* ✅ Green */
+}
+
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 992px) {

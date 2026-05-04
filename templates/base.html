@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Disha Consultant - Study Abroad Experts{% endblock %}</title>
+    <title>{% block title %}A&A Solution - Study Abroad Experts{% endblock %}</title>
     <meta name="description" content="Leading study abroad consultants helping students achieve their dreams of overseas education.">
     
     <!-- Google Fonts -->
@@ -28,7 +28,7 @@
             <div class="top-bar-content">
                 <div class="top-info">
                     <span><i class="fas fa-phone"></i> +91 98765 43210</span>
-                    <span><i class="fas fa-envelope"></i> info@dishaconsultant.com</span>
+                    <span><i class="fas fa-envelope"></i> info@a&asolution.com</span>
                 </div>
                 <div class="top-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -46,8 +46,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="{{ url_for('index') }}" class="logo">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Disha<em>Consultant</em></span>
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
                 </a>
                 
                 <ul class="nav-menu" id="navMenu">
@@ -59,6 +58,7 @@
                             <li><a href="{{ url_for('services') }}">Study Abroad</a></li>
                             <li><a href="{{ url_for('visa') }}">Visa Assistance</a></li>
                             <li><a href="{{ url_for('coaching') }}">Coaching Classes</a></li>
+                            <li><a href="{{ url_for('hiring') }}">Hiring</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ url_for('countries') }}" class="{% if request.endpoint == 'countries' %}active{% endif %}">Countries</a></li>
@@ -79,18 +79,18 @@
 
     <!-- Flash Messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <div class="flash-container">
-            {% for category, message in messages %}
-                <div class="flash flash-{{ category }}">
-                    <i class="fas {% if category == 'success' %}fa-check-circle{% else %}fa-exclamation-circle{% endif %}"></i> 
-                    {{ message }}
-                    <span class="flash-close">&times;</span>
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endwith %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">
+                        <i class="fas {% if category == 'success' %}fa-check-circle{% else %}fa-exclamation-circle{% endif %}"></i> 
+                        {{ message }}
+                        <span class="flash-close">&times;</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 
     <!-- Main Content -->
     <main>
@@ -103,8 +103,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="{{ url_for('index') }}" class="footer-logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Disha<em>Consultant</em></span>
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
                     </a>
                     <p>We are dedicated to helping students achieve their dreams of studying abroad with expert guidance and personalized counseling.</p>
                     <div class="footer-social">
@@ -123,6 +122,7 @@
                         <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
                         <li><a href="{{ url_for('countries') }}"><i class="fas fa-chevron-right"></i> Countries</a></li>
                         <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="{{ url_for('hiring') }}"><i class="fas fa-chevron-right"></i> Hiring</a></li>
                     </ul>
                 </div>
                 
@@ -134,6 +134,8 @@
                         <li><a href="#"><i class="fas fa-chevron-right"></i> IELTS Coaching</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> PTE Coaching</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Career Counseling</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hiring</a></li>
+
                     </ul>
                 </div>
                 
@@ -142,14 +144,14 @@
                     <ul class="footer-contact">
                         <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Delhi, India 110001</li>
                         <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-envelope"></i> info@dishaconsultant.com</li>
+                        <li><i class="fas fa-envelope"></i> info@a&asolution.com</li>
                         <li><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; {{ current_year }} Disha Consultant. All Rights Reserved. | Designed with <i class="fas fa-heart"></i></p>
+                <p>&copy; {{ current_year }} A&A Solution. All Rights Reserved. | Designed with <i class="fas fa-heart"></i></p>
             </div>
         </div>
     </footer>

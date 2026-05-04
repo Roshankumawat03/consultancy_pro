@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Admin Dashboard{% endblock %} - A&A Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="A&A" style="height: 40px;">
+            <h2>A&A Admin</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('admin_dashboard') }}" class="{% if request.endpoint == 'admin_dashboard' %}active{% endif %}">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="{{ url_for('admin_contacts') }}" class="{% if 'contact' in request.endpoint %}active{% endif %}">
+                <i class="fas fa-envelope"></i> Contact Messages
+            </a>
+            <a href="{{ url_for('admin_applications') }}" class="{% if 'application' in request.endpoint %}active{% endif %}">
+                <i class="fas fa-briefcase"></i> Job Applications
+            </a>
+            <a href="{{ url_for('admin_subscribers') }}" class="{% if 'subscriber' in request.endpoint %}active{% endif %}">
+                <i class="fas fa-users"></i> Newsletter
+            </a>
+            <a href="{{ url_for('index') }}" target="_blank">
+                <i class="fas fa-external-link-alt"></i> View Website
+            </a>
+            <a href="{{ url_for('admin_logout') }}" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Bar -->
+        <header class="top-header">
+            <button class="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('active')">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>{% block heading %}Dashboard{% endblock %}</h1>
+            <div class="header-right">
+                <span class="welcome">Welcome, <strong>{{ session.admin_username }}</strong></span>
+                <div class="avatar">{{ session.admin_username[0].upper() }}</div>
+            </div>
+        </header>
+        
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    <i class="fas fa-{% if category == 'success' %}check-circle{% else %}exclamation-circle{% endif %}"></i>
+                    {{ message }}
+                    <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+                </div>
+            {% endfor %}
+        {% endwith %}
+        
+        <!-- Content -->
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
