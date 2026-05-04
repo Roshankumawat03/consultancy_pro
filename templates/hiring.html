@@ -13,8 +13,10 @@
 <!-- Hiring Intro -->
 <section class="section">
     <div class="container">
-        <div class="section-title">
-            <h2>Career Opportunities</h2>
+        <!-- ✅ FIX 1: section-title → section-header, heading me span added for color -->
+        <div class="section-header">
+            <span class="section-tag">Opportunities</span>
+            <h2>Career <span>Opportunities</span></h2>
             <p>We help students and professionals find the right career path globally</p>
         </div>
         
@@ -46,8 +48,10 @@
 <!-- Available Positions -->
 <section class="section section-light">
     <div class="container">
-        <div class="section-title">
-            <h2>Available Positions</h2>
+        <!-- ✅ FIX 2: section-title → section-header -->
+        <div class="section-header">
+            <span class="section-tag">Jobs</span>
+            <h2>Available <span>Positions</span></h2>
             <p>Explore current job openings</p>
         </div>
         
@@ -101,8 +105,10 @@
 <!-- Application Form -->
 <section class="section">
     <div class="container">
-        <div class="section-title">
-            <h2>Apply Now</h2>
+        <!-- ✅ FIX 3: section-title → section-header -->
+        <div class="section-header">
+            <span class="section-tag">Join Us</span>
+            <h2>Apply <span>Now</span></h2>
             <p>Fill out the form below and we'll get back to you</p>
         </div>
         
@@ -190,16 +196,24 @@
     </div>
 </section>
 
-<!-- CTA -->
+<!-- ✅ FIX 4: CTA Section - proper button styling added -->
 <section class="cta-section">
     <div class="container">
-        <h2>Need Career Guidance?</h2>
+        <h2>Need Career <span>Guidance?</span></h2>
         <p>Talk to our career experts today</p>
-        <a href="{{ url_for('contact') }}" class="btn-cta">Contact Us</a>
+        <a href="{{ url_for('contact') }}" class="btn-cta">
+            <i class="fas fa-headset"></i> Contact Us
+        </a>
     </div>
 </section>
 
 <style>
+/* ===== Section Light ===== */
+.section-light {
+    background: var(--bg-light);
+}
+
+/* ===== Hiring Features ===== */
 .hiring-features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -235,6 +249,7 @@
     line-height: 1.6;
 }
 
+/* ===== Positions Grid ===== */
 .positions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -296,6 +311,7 @@
     font-weight: 600;
 }
 
+/* ===== Application Form ===== */
 .application-form-wrapper {
     max-width: 800px;
     margin: 40px auto 0;
@@ -339,7 +355,7 @@
 .application-form textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.1);
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
 }
 .btn-submit {
     width: 100%;
@@ -353,21 +369,75 @@
     cursor: pointer;
     transition: 0.3s;
     font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 .btn-submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(27, 58, 92, 0.3);
 }
 
+/* ===== CTA Section ===== */
+.cta-section {
+    background: var(--gradient-primary);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+.cta-section h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.cta-section h2 span {
+    color: var(--accent-color);
+}
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+/* ✅ FIX: btn-cta - proper button styling */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: var(--primary-color);
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    background: var(--accent-color);
+    color: white;
+}
+.btn-cta i {
+    font-size: 18px;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 992px) {
     .hiring-features { grid-template-columns: repeat(2, 1fr); }
     .positions-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-section h2 { font-size: 32px; }
 }
 @media (max-width: 768px) {
     .hiring-features { grid-template-columns: 1fr; }
     .positions-grid { grid-template-columns: 1fr; }
     .application-form .form-row { grid-template-columns: 1fr; }
     .application-form-wrapper { padding: 25px; }
+    .cta-section h2 { font-size: 26px; }
+    .cta-section { padding: 50px 0; }
 }
 </style>
 
